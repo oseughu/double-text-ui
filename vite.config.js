@@ -5,12 +5,7 @@ import { resolve } from 'path'
 const config = {
   plugins: [sveltekit()],
   server: {
-    proxy: {
-      '/api': {
-        target: process.env.API_URL,
-        changeOrigin: true
-      }
-    }
+    origin: 'https://double-text.onrender.com'
   },
   resolve: {
     alias: {
