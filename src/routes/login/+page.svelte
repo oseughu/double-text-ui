@@ -20,11 +20,7 @@
       })
     })
 
-    if (res.status === 200) {
-      await goto('/posts')
-    } else {
-      alert('invalid email or password')
-    }
+    await goto('posts')
   }
 </script>
 
