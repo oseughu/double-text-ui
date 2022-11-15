@@ -7,7 +7,7 @@
     password = ''
 
   const submit = async () => {
-    const res = await fetch(`${PUBLIC_API_URL}/login`, {
+    await fetch(`${PUBLIC_API_URL}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
