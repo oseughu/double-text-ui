@@ -1,12 +1,13 @@
 <script>
   import { goto } from '$app/navigation'
   import Header from '$components/Header.svelte'
+  import { API_URL } from '$env/static/public'
 
   let title,
     content = ''
 
   const submit = async () => {
-    await fetch('https://double-text.onrender.com/api/posts/new', {
+    await fetch(`${API_URL}/posts/new`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',

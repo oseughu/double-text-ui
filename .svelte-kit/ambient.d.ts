@@ -73,6 +73,7 @@ declare module '$env/static/private' {
 	export const rvm_prefix: string;
 	export const rvm_ruby_make: string;
 	export const PATH: string;
+	export const FIG_HOSTNAME: string;
 	export const npm_package_json: string;
 	export const _: string;
 	export const npm_config_userconfig: string;
@@ -118,7 +119,6 @@ declare module '$env/static/private' {
 	export const POSH_THEME: string;
 	export const rvm_only_path_flag: string;
 	export const RUBY_VERSION: string;
-	export const FIG_TERM_VERSION: string;
 	export const npm_node_execpath: string;
 	export const npm_config_prefix: string;
 	export const FIG_TERM: string;
@@ -199,6 +199,7 @@ declare module '$env/dynamic/private' {
 		rvm_prefix: string;
 		rvm_ruby_make: string;
 		PATH: string;
+		FIG_HOSTNAME: string;
 		npm_package_json: string;
 		_: string;
 		npm_config_userconfig: string;
@@ -244,7 +245,6 @@ declare module '$env/dynamic/private' {
 		POSH_THEME: string;
 		rvm_only_path_flag: string;
 		RUBY_VERSION: string;
-		FIG_TERM_VERSION: string;
 		npm_node_execpath: string;
 		npm_config_prefix: string;
 		FIG_TERM: string;

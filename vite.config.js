@@ -1,5 +1,4 @@
 import { sveltekit } from '@sveltejs/kit/vite'
-import 'dotenv/config'
 import { resolve } from 'path'
 
 const config = {

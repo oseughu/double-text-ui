@@ -1,9 +1,10 @@
 <script>
+    import { API_URL } from '$env/static/public'
   export let postId
   let content
 
   const addComment = async () => {
-    await fetch(`https://double-text.onrender.com/api/posts/${postId}/comments`, {
+    await fetch(`${API_URL}/posts/${postId}/comments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',

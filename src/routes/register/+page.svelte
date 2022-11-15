@@ -1,13 +1,14 @@
 <script>
   import { goto } from '$app/navigation'
   import Header from '$components/Header.svelte'
+  import { API_URL } from '$env/static/public'
 
   let name = '',
     email = '',
     password = ''
 
   const submit = async () => {
-    const res = await fetch('https://double-text.onrender.com/api/register', {
+    const res = await fetch(`${API_URL}/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -17,13 +18,11 @@
       })
     })
 
-    console.log(res.status)
-
-    // if (res.status === 200) {
-    //   await goto('/login')
-    // } else {
-    //   alert('error registering user. please check all fields and try again.')
-    // }
+    if (res.status === 200) {
+      await goto('/login')
+    } else {
+      alert('error registering user. please check all fields and try again.')
+    }
   }
 </script>
 

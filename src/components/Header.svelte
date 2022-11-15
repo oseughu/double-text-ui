@@ -1,6 +1,7 @@
 <script>
   import { goto } from '$app/navigation'
   import { page } from '$app/stores'
+  import { API_URL } from '$env/static/public'
   import { onMount } from 'svelte'
   import { user } from '../stores'
   import Spinner from './Spinner.svelte'
@@ -13,7 +14,7 @@
 
   onMount(async () => {
     try {
-      const response = await fetch('https://double-text.onrender.com/api/user', {
+      const response = await fetch(`${API_URL}/user`, {
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include'
       })
@@ -29,7 +30,7 @@
   })
 
   const logout = async () => {
-    await fetch('https://double-text.onrender.com/api/logout', {
+    await fetch(`${env.API_URL}/logout`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include'

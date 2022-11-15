@@ -2,6 +2,7 @@
   import { goto } from '$app/navigation'
   import { page } from '$app/stores'
   import Header from '$components/Header.svelte'
+  import { API_URL } from '$env/static/public'
 
   export let data
 
@@ -14,7 +15,7 @@
 
   const addReply = async () => {
     await fetch(
-      `https://double-text.onrender.com/api/posts/${$page.params.id}/comments/${$page.params.commentId}/replies/new`,
+      `${API_URL}/posts/${$page.params.id}/comments/${$page.params.commentId}/replies/new`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

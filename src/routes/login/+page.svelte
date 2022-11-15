@@ -1,4 +1,5 @@
 <script>
+    import { API_URL } from '$env/static/public'
   import { goto } from '$app/navigation'
   import Header from '$components/Header.svelte'
 
@@ -6,7 +7,7 @@
     password = ''
 
   const submit = async () => {
-    const res = await fetch('https://double-text.onrender.com/api/login', {
+    const res = await fetch(`${API_URL}/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
