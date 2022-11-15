@@ -1,7 +1,7 @@
 <script>
   import { goto } from '$app/navigation'
   import { page } from '$app/stores'
-  import { API_URL } from '$env/static/public'
+  import { env } from '$env/static/public'
   import { onMount } from 'svelte'
   import { user } from '../stores'
   import Spinner from './Spinner.svelte'
@@ -14,7 +14,7 @@
 
   onMount(async () => {
     try {
-      const response = await fetch(`${API_URL}/user`, {
+      const response = await fetch(`${env.API_URL}/user`, {
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include'
       })

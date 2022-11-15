@@ -1,5 +1,5 @@
 <script>
-    import { API_URL } from '$env/static/public'
+  import { env } from '$env/static/public'
   import FaArrowDown from 'svelte-icons/fa/FaArrowDown.svelte'
   import FaArrowUp from 'svelte-icons/fa/FaArrowUp.svelte'
 
@@ -8,7 +8,7 @@
   export let downvotes
 
   const upVote = async () => {
-    await fetch(`${API_URL}/posts/${pageId}/vote-up`, {
+    await fetch(`${env.API_URL}/posts/${pageId}/vote-up`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include'

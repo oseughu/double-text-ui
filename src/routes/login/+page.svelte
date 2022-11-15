@@ -1,13 +1,13 @@
 <script>
-    import { API_URL } from '$env/static/public'
   import { goto } from '$app/navigation'
   import Header from '$components/Header.svelte'
+  import { env } from '$env/static/public'
 
   let email,
     password = ''
 
   const submit = async () => {
-    const res = await fetch(`${API_URL}/login`, {
+    const res = await fetch(`${env.API_URL}/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
