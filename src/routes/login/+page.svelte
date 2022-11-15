@@ -10,7 +10,6 @@
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://double-text.vercel.app'
       },
       credentials: 'include',
       body: JSON.stringify({

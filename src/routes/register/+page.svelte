@@ -10,8 +10,7 @@
     await fetch(`/api/register`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://double-text.vercel.app'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         name,

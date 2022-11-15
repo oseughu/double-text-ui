@@ -16,7 +16,6 @@
       const response = await fetch(`/api/user`, {
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'https://double-text.vercel.app'
         },
         credentials: 'include'
       })
@@ -36,7 +35,6 @@
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://double-text.vercel.app'
       },
       credentials: 'include'
     })
