@@ -18,7 +18,10 @@
       `${PUBLIC_API_URL}/posts/${$page.params.id}/comments/${$page.params.commentId}/replies/new`,
       {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
         credentials: 'include',
         body: JSON.stringify({
           content

@@ -10,21 +10,27 @@
   const upVote = async () => {
     await fetch(`${PUBLIC_API_URL}/posts/${pageId}/vote-up`, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
       credentials: 'include'
     })
 
-    // location.reload()
+    location.reload()
   }
 
   const downVote = async () => {
     await fetch(`${PUBLIC_API_URL}/posts/${pageId}/vote-down`, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
       credentials: 'include'
     })
 
-    // location.reload()
+    location.reload()
   }
 </script>
 

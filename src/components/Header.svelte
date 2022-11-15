@@ -15,7 +15,10 @@
   onMount(async () => {
     try {
       const response = await fetch(`${PUBLIC_API_URL}/user`, {
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
         credentials: 'include'
       })
 
@@ -32,7 +35,10 @@
   const logout = async () => {
     await fetch(`${PUBLIC_API_URL}/logout`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
       credentials: 'include'
     })
 

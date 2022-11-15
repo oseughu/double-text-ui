@@ -9,7 +9,10 @@
   const submit = async () => {
     await fetch(`${PUBLIC_API_URL}/posts/new`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
       credentials: 'include',
       body: JSON.stringify({
         title,

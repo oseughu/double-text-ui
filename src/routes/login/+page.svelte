@@ -9,7 +9,10 @@
   const submit = async () => {
     const res = await fetch(`${PUBLIC_API_URL}/login`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
       credentials: 'include',
       body: JSON.stringify({
         email,

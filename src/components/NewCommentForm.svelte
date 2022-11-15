@@ -6,7 +6,10 @@
   const addComment = async () => {
     await fetch(`${PUBLIC_API_URL}/posts/${postId}/comments`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
       credentials: 'include',
       body: JSON.stringify({
         content

@@ -10,7 +10,10 @@
   const submit = async () => {
     const res = await fetch(`${PUBLIC_API_URL}/register`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
       body: JSON.stringify({
         name,
         email,
