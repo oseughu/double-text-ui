@@ -1,7 +1,7 @@
 <script>
   import { goto } from '$app/navigation'
   import { page } from '$app/stores'
-  import { env } from '$env/static/public'
+  import { PUBLIC_API_URL } from '$env/static/public'
   import { onMount } from 'svelte'
   import { user } from '../stores'
   import Spinner from './Spinner.svelte'
@@ -14,7 +14,7 @@
 
   onMount(async () => {
     try {
-      const response = await fetch(`${env.API_URL}/user`, {
+      const response = await fetch(`${PUBLIC_API_URL}/user`, {
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include'
       })
@@ -30,7 +30,7 @@
   })
 
   const logout = async () => {
-    await fetch(`${env.API_URL}/logout`, {
+    await fetch(`${PUBLIC_API_URL}/logout`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include'
@@ -68,7 +68,7 @@
         </ul>
         <!-- svelte-ignore a11y-invalid-attribute -->
         <ul class="nav navbar-nav navbar-right">
-          {#if message === undefined}
+          {#if $user === undefined}
             <li class="nav-item"
               ><a href="javascript:void(0)" class="nav-link active"><Spinner /></a></li>
           {:else}

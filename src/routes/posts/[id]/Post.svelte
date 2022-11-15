@@ -3,9 +3,9 @@
 
   export let post
 
-  $: voteScore = post.upVotes.length - post.downVotes.length
   $: upvotes = post.upVotes.length
   $: downvotes = post.downVotes.length
+  $: voteScore = upvotes - downvotes
 </script>
 
 <li class="list-group-item">

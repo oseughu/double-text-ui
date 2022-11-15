@@ -26,7 +26,6 @@
  * ```
  */
 declare module '$env/static/private' {
-	export const API_URL: string;
 	export const LC_FIG_SET_PARENT: string;
 	export const FIG_PID: string;
 	export const rvm_use_flag: string;
@@ -123,6 +122,8 @@ declare module '$env/static/private' {
 	export const npm_config_prefix: string;
 	export const FIG_TERM: string;
 	export const COLORTERM: string;
+	export const VITE_API_URL: string;
+	export const NODE_ENV: string;
 }
 
 /**
@@ -135,7 +136,7 @@ declare module '$env/static/private' {
  * ```
  */
 declare module '$env/static/public' {
-
+	export const PUBLIC_API_URL: string;
 }
 
 /**
@@ -152,7 +153,6 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-		API_URL: string;
 		LC_FIG_SET_PARENT: string;
 		FIG_PID: string;
 		rvm_use_flag: string;
@@ -249,6 +249,8 @@ declare module '$env/dynamic/private' {
 		npm_config_prefix: string;
 		FIG_TERM: string;
 		COLORTERM: string;
+		VITE_API_URL: string;
+		NODE_ENV: string;
 		[key: string]: string | undefined;
 	}
 }
@@ -265,6 +267,7 @@ declare module '$env/dynamic/private' {
  */
 declare module '$env/dynamic/public' {
 	export const env: {
+		PUBLIC_API_URL: string;
 		[key: string]: string | undefined;
 	}
 }

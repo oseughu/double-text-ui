@@ -1,10 +1,10 @@
 <script>
-  import { env } from '$env/static/public'
+  import { PUBLIC_API_URL } from '$env/static/public'
   export let postId
   let content
 
   const addComment = async () => {
-    await fetch(`${env.API_URL}/posts/${postId}/comments`, {
+    await fetch(`${PUBLIC_API_URL}/posts/${postId}/comments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',

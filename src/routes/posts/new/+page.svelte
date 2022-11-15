@@ -1,13 +1,13 @@
 <script>
   import { goto } from '$app/navigation'
   import Header from '$components/Header.svelte'
-  import { env } from '$env/static/public'
+  import { PUBLIC_API_URL } from '$env/static/public'
 
   let title,
     content = ''
 
   const submit = async () => {
-    await fetch(`${env.API_URL}/posts/new`, {
+    await fetch(`${PUBLIC_API_URL}/posts/new`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
