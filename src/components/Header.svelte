@@ -13,7 +13,7 @@
 
   onMount(async () => {
     try {
-      const response = await fetch('/api/user', {
+      const response = await fetch('https://double-text.onrender.com/api/user', {
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include'
       })
@@ -29,7 +29,7 @@
   })
 
   const logout = async () => {
-    await fetch('/api/logout', {
+    await fetch('https://double-text.onrender.com/api/logout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include'

@@ -7,7 +7,7 @@
   export let downvotes
 
   const upVote = async () => {
-    await fetch(`/api/posts/${pageId}/vote-up`, {
+    await fetch(`https://double-text.onrender.com/api/posts/${pageId}/vote-up`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include'
@@ -17,7 +17,7 @@
   }
 
   const downVote = async () => {
-    await fetch(`/api/posts/${pageId}/vote-down`, {
+    await fetch(`https://double-text.onrender.com/api/posts/${pageId}/vote-down`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include'

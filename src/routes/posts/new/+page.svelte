@@ -6,7 +6,7 @@
     content = ''
 
   const submit = async () => {
-    await fetch('/api/posts/new', {
+    await fetch('https://double-text.onrender.com/api/posts/new', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',

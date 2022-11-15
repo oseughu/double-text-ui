@@ -13,14 +13,17 @@
   comment = data.comment
 
   const addReply = async () => {
-    await fetch(`/api/posts/${$page.params.id}/comments/${$page.params.commentId}/replies/new`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      body: JSON.stringify({
-        content
-      })
-    })
+    await fetch(
+      `https://double-text.onrender.com/api/posts/${$page.params.id}/comments/${$page.params.commentId}/replies/new`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({
+          content
+        })
+      }
+    )
 
     await goto(`/posts/${$page.params.id}`)
   }
@@ -30,8 +33,7 @@
 
 <div class="container mt-4">
   <h3 class="mt-4 mb-4"
-    >Reply to {comment.author.name} on "{comment.content}" from "{post.title}"</h3
-  >
+    >Reply to {comment.author.name} on "{comment.content}" from "{post.title}"</h3>
 
   <form class="form-group" on:submit|preventDefault={addReply}>
     <div class="mb-3">

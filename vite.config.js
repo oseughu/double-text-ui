@@ -4,9 +4,6 @@ import { resolve } from 'path'
 
 const config = {
   plugins: [sveltekit()],
-  server: {
-    origin: 'https://double-text.onrender.com'
-  },
   resolve: {
     alias: {
       $: resolve('src'),

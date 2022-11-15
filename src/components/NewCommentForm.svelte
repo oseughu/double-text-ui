@@ -3,7 +3,7 @@
   let content
 
   const addComment = async () => {
-    await fetch(`/api/posts/${postId}/comments`, {
+    await fetch(`https://double-text.onrender.com/api/posts/${postId}/comments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
