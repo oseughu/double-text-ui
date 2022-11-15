@@ -12,7 +12,7 @@
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': 'https://double-text.vercel.app'
       },
       credentials: 'include'
     })
@@ -25,7 +25,7 @@
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': 'https://double-text.vercel.app'
       },
       credentials: 'include'
     })

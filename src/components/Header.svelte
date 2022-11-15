@@ -17,7 +17,7 @@
       const response = await fetch(`${PUBLIC_API_URL}/user`, {
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
+          'Access-Control-Allow-Origin': 'https://double-text.vercel.app'
         },
         credentials: 'include'
       })
@@ -37,7 +37,7 @@
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': 'https://double-text.vercel.app'
       },
       credentials: 'include'
     })
