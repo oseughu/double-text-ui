@@ -122,8 +122,6 @@ declare module '$env/static/private' {
 	export const npm_config_prefix: string;
 	export const FIG_TERM: string;
 	export const COLORTERM: string;
-	export const VITE_API_URL: string;
-	export const NODE_ENV: string;
 }
 
 /**
@@ -249,8 +247,6 @@ declare module '$env/dynamic/private' {
 		npm_config_prefix: string;
 		FIG_TERM: string;
 		COLORTERM: string;
-		VITE_API_URL: string;
-		NODE_ENV: string;
 		[key: string]: string | undefined;
 	}
 }
