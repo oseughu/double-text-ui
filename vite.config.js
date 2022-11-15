@@ -1,8 +1,14 @@
 import { sveltekit } from '@sveltejs/kit/vite'
+import 'dotenv/config'
 import { resolve } from 'path'
 
 const config = {
   plugins: [sveltekit()],
+  server: {
+    proxy: {
+      '/api': process.env.PUBLIC_API_URL
+    }
+  },
   resolve: {
     alias: {
       $: resolve('src'),
