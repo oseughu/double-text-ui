@@ -6,7 +6,10 @@ const config = {
   plugins: [sveltekit()],
   server: {
     proxy: {
-      '/api': process.env.PUBLIC_API_URL
+      '/api': {
+        target: process.env.PUBLIC_API_URL,
+        changeOrigin: true
+      }
     }
   },
   resolve: {
