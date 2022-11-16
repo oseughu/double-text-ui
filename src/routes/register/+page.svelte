@@ -1,14 +1,13 @@
 <script>
   import { goto } from '$app/navigation'
   import Header from '$components/Header.svelte'
-  import { PUBLIC_API_URL } from '$env/static/public'
 
   let name = '',
     email = '',
     password = ''
 
   const submit = async () => {
-    await fetch(`${PUBLIC_API_URL}/register`, {
+    await fetch(`/api/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

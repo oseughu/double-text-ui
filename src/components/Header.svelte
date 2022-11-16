@@ -1,7 +1,6 @@
 <script>
   import { goto } from '$app/navigation'
   import { page } from '$app/stores'
-  import { PUBLIC_API_URL } from '$env/static/public'
   import { onMount } from 'svelte'
   import { user } from '../stores'
   import Spinner from './Spinner.svelte'
@@ -13,26 +12,21 @@
     navBarLink = []
 
   onMount(async () => {
-    try {
-      const response = await fetch(`${PUBLIC_API_URL}/user`, {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        credentials: 'include'
-      })
+    const response = await fetch(`/api/user`, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include'
+    })
 
-      const content = await response.json()
+    const content = await response.json()
 
-      user.set(content)
-      message = `Hi, ${content.name}`
-    } catch (error) {
-      message = 'You are not logged in'
-      user.set({})
-    }
+    user.set(content)
+    message = $user.name === undefined ? 'not logged in' : `Hi, ${$user.name}`
   })
 
   const logout = async () => {
-    await fetch(`${PUBLIC_API_URL}/logout`, {
+    await fetch(`/api/logout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -67,29 +61,38 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="/posts/new">New Post</a>
+            <a class="nav-link active" href={$user.name === undefined ? '/login' : '/posts/new'}
+              >New Post</a>
           </li>
         </ul>
         <!-- svelte-ignore a11y-invalid-attribute -->
         <ul class="nav navbar-nav navbar-right">
-          {#if $user === undefined}
+          {#if message === undefined}
             <li class="nav-item"
               ><a href="javascript:void(0)" class="nav-link active"><Spinner /></a></li>
+          {:else if message === 'not logged in'}
+            <li class="nav-item"><a href="/login" class="nav-link active">Login</a></li>
+            <li class="nav-item"><a href="/register" class="nav-link active">Sign Up</a></li>
           {:else}
             <li class="nav-item"
-              ><a href="javascript:void(0)" class="nav-link active">{message}</a></li>
+              ><a href="javascript:void(0)" class="nav-link active">{message}</a>
+            </li>
+            <li class="nav-item">
+              <a href="javascript:void(0)" on:click={logout} class="nav-link active">Logout</a>
+            </li>
           {/if}
-          <li class="nav-item">
-            <a href="javascript:void(0)" on:click={logout} class="nav-link active">Logout</a></li>
         </ul>
       {:else}
         <ul class="nav navbar-nav navbar-right">
           <li class="nav-item">
             <a href={navBarLink[0]} class="nav-link active">{navBarText[0]}</a>
           </li>
-
           <li class="nav-item"
-            ><a href={navBarLink[1]} class="nav-link active">{navBarText[1]}</a></li>
+            ><a href={navBarLink[1]} class="nav-link active">{navBarText[1]}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/posts">Posts</a>
+          </li>
         </ul>
       {/if}
     </div>

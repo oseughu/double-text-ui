@@ -1,4 +1,5 @@
 <script>
+  import { user } from '$/stores'
   import Header from '$components/Header.svelte'
   import NewCommentForm from '$components/NewCommentForm.svelte'
   import Replies from '$components/Replies.svelte'
@@ -37,7 +38,10 @@
             <p class="text-right">
               <strong>{comment.author.name}</strong>
             </p>
-            <a href={`/posts/${post._id}/comments/${comment._id}/replies/new`}>Reply</a>
+            <a
+              href={$user.name === undefined
+                ? '/login'
+                : `/posts/${post._id}/comments/${comment._id}/replies/new`}>Reply</a>
             <hr />
             {#if comment.replies.length > 0}
               <Replies {post} {comment} />

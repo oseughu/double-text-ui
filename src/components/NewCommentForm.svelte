@@ -1,21 +1,26 @@
 <script>
-  import { PUBLIC_API_URL } from '$env/static/public'
+  import { user } from '$/stores'
+  import { goto } from '$app/navigation'
   export let postId
   let content
 
   const addComment = async () => {
-    await fetch(`${PUBLIC_API_URL}/posts/${postId}/comments`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      credentials: 'include',
-      body: JSON.stringify({
-        content
+    if ($user.name === undefined) {
+      await goto('/login')
+    } else {
+      await fetch(`/api/posts/${postId}/comments`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+          content
+        })
       })
-    })
 
-    location.reload()
+      location.reload()
+    }
   }
 </script>
 

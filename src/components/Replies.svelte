@@ -1,4 +1,5 @@
 <script>
+  import { user } from '$/stores'
   export let comment
   export let post
 </script>
@@ -11,7 +12,10 @@
     <p class="text-right">
       <strong>{reply.author.name}</strong>
     </p>
-    <a href={`/posts/${post._id}/comments/${reply._id}/replies/new`}>Reply</a>
+    <a
+      href={$user.name === undefined
+        ? '/login'
+        : `/posts/${post._id}/comments/${reply._id}/replies/new`}>Reply</a>
     <hr />
   </div>
 {/each}
