@@ -52,7 +52,7 @@
   <div class="d-flex justify-content-center">
     <Vote {upvotes} {downvotes} pageId={post._id} />
     {#if $user._id === post.author._id}
-      <button on:click={deletePost} class="btn btn-danger del" type="submit"><MdDelete /></button>
+      <button on:click={deletePost} class="btn btn-danger del"><MdDelete /></button>
     {/if}
   </div>
   <hr />
