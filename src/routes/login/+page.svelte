@@ -19,7 +19,7 @@
       })
     })
 
-    await goto('posts')
+    await goto('/posts')
   }
 </script>
 
