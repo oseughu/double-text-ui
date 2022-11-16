@@ -1,7 +1,22 @@
 <script>
+  import { user } from '$/stores'
   import Vote from '$components/Vote.svelte'
+  import { PUBLIC_API_URL } from '$env/static/public'
+  import MdDelete from 'svelte-icons/md/MdDelete.svelte'
 
   export let post
+
+  const deletePost = async () => {
+    await fetch(`${PUBLIC_API_URL}/posts/${post._id}/delete`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include'
+    })
+
+    res.status === 200 ? location.reload() : alert('error deleting post, please try again.')
+  }
 
   $: upvotes = post.upVotes.length
   $: downvotes = post.downVotes.length
@@ -30,6 +45,18 @@
   <div>
     Vote Score: {voteScore}
   </div>
-  <Vote {upvotes} {downvotes} pageId={post._id} />
+  <div class="d-flex justify-content-center">
+    <Vote {upvotes} {downvotes} pageId={post._id} />
+    {#if $user._id === post.author._id}
+      <button on:click={deletePost} class="btn btn-danger del" type="submit"><MdDelete /></button>
+    {/if}
+  </div>
   <hr />
 </li>
+
+<style>
+  .del {
+    width: 32px;
+    height: 32px;
+  }
+</style>
