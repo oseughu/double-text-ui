@@ -1,4 +1,5 @@
 <script>
+  import { user } from '$/stores'
   import FaArrowDown from 'svelte-icons/fa/FaArrowDown.svelte'
   import FaArrowUp from 'svelte-icons/fa/FaArrowUp.svelte'
 
@@ -7,27 +8,35 @@
   export let downvotes
 
   const upVote = async () => {
-    await fetch(`/api/posts/${pageId}/vote-up`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      credentials: 'include'
-    })
+    if ($user.name === undefined) {
+      await goto('/login')
+    } else {
+      await fetch(`/api/posts/${pageId}/vote-up`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include'
+      })
 
-    location.reload()
+      location.reload()
+    }
   }
 
   const downVote = async () => {
-    await fetch(`/api/posts/${pageId}/vote-down`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      credentials: 'include'
-    })
+    if ($user.name === undefined) {
+      await goto('/login')
+    } else {
+      await fetch(`/api/posts/${pageId}/vote-down`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include'
+      })
 
-    location.reload()
+      location.reload()
+    }
   }
 </script>
 
