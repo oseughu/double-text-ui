@@ -1,5 +1,6 @@
 <script>
   import { user } from '$/stores'
+  import { goto } from '$app/navigation'
   import FaArrowDown from 'svelte-icons/fa/FaArrowDown.svelte'
   import FaArrowUp from 'svelte-icons/fa/FaArrowUp.svelte'
 
