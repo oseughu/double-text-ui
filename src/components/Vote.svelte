@@ -1,6 +1,7 @@
 <script>
   import { user } from '$/stores'
   import { goto } from '$app/navigation'
+  import { PUBLIC_API_URL } from '$env/static/public'
   import FaArrowDown from 'svelte-icons/fa/FaArrowDown.svelte'
   import FaArrowUp from 'svelte-icons/fa/FaArrowUp.svelte'
 
@@ -12,7 +13,7 @@
     if ($user.name === undefined) {
       await goto('/login')
     } else {
-      await fetch(`/api/posts/${pageId}/vote-up`, {
+      await fetch(`${PUBLIC_API_URL}/posts/${pageId}/vote-up`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -28,7 +29,7 @@
     if ($user.name === undefined) {
       await goto('/login')
     } else {
-      await fetch(`/api/posts/${pageId}/vote-down`, {
+      await fetch(`${PUBLIC_API_URL}/posts/${pageId}/vote-down`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

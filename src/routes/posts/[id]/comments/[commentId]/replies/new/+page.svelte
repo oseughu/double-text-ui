@@ -2,6 +2,7 @@
   import { goto } from '$app/navigation'
   import { page } from '$app/stores'
   import Header from '$components/Header.svelte'
+  import { PUBLIC_API_URL } from '$env/static/public'
 
   export let data
 
@@ -13,16 +14,19 @@
   comment = data.comment
 
   const addReply = async () => {
-    await fetch(`/api/posts/${$page.params.id}/comments/${$page.params.commentId}/replies/new`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      credentials: 'include',
-      body: JSON.stringify({
-        content
-      })
-    })
+    await fetch(
+      `${PUBLIC_API_URL}/posts/${$page.params.id}/comments/${$page.params.commentId}/replies/new`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+          content
+        })
+      }
+    )
 
     await goto(`/posts/${$page.params.id}`)
   }

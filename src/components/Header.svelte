@@ -1,8 +1,9 @@
 <script>
+  import { user } from '$/stores'
   import { goto } from '$app/navigation'
   import { page } from '$app/stores'
+  import { PUBLIC_API_URL } from '$env/static/public'
   import { onMount } from 'svelte'
-  import { user } from '../stores'
   import Spinner from './Spinner.svelte'
 
   let message
@@ -12,7 +13,7 @@
     navBarLink = []
 
   onMount(async () => {
-    const response = await fetch(`/api/user`, {
+    const response = await fetch(`${PUBLIC_API_URL}/user`, {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -26,7 +27,7 @@
   })
 
   const logout = async () => {
-    await fetch(`/api/logout`, {
+    await fetch(`${PUBLIC_API_URL}/logout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

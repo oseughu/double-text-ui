@@ -1,6 +1,7 @@
 <script>
   import { user } from '$/stores'
   import { goto } from '$app/navigation'
+  import { PUBLIC_API_URL } from '$env/static/public'
   export let postId
   let content
 
@@ -8,7 +9,7 @@
     if ($user.name === undefined) {
       await goto('/login')
     } else {
-      await fetch(`/api/posts/${postId}/comments`, {
+      await fetch(`${PUBLIC_API_URL}/posts/${postId}/comments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
