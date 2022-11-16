@@ -1,5 +1,5 @@
 <script>
-
+  import { PUBLIC_API_URL } from '$env/static/public'
   import FaArrowDown from 'svelte-icons/fa/FaArrowDown.svelte'
   import FaArrowUp from 'svelte-icons/fa/FaArrowUp.svelte'
 
@@ -8,10 +8,10 @@
   export let downvotes
 
   const upVote = async () => {
-    await fetch(`/api/posts/${pageId}/vote-up`, {
+    await fetch(`${PUBLIC_API_URL}/posts/${pageId}/vote-up`, {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       credentials: 'include'
     })
@@ -20,10 +20,10 @@
   }
 
   const downVote = async () => {
-    await fetch(`/api/posts/${pageId}/vote-down`, {
+    await fetch(`${PUBLIC_API_URL}/posts/${pageId}/vote-down`, {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       credentials: 'include'
     })
