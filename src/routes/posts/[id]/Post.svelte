@@ -15,7 +15,11 @@
       credentials: 'include'
     })
 
-    res.status === 200 ? location.reload() : alert('error deleting post, please try again.')
+    if (res.status === 200) {
+      location.reload()
+    } else {
+      alert('error deleting post, please try again.')
+    }
   }
 
   $: upvotes = post.upVotes.length

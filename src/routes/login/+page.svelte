@@ -19,7 +19,11 @@
       })
     })
 
-    res.status === 200 ? await goto('/posts') : alert('invalid username or password')
+    if (res.status === 200) {
+      await goto('/posts')
+    } else {
+      alert('invalid username or password.')
+    }
   }
 </script>
 

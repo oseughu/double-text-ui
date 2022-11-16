@@ -20,7 +20,11 @@
       })
     })
 
-    res.status === 201 ? await goto('/login') : alert('error registering user, please try again.')
+    if (res.status === 200) {
+      await goto('/login')
+    } else {
+      alert('error registering user. please check all fields and try again.')
+    }
   }
 </script>
 
