@@ -4,8 +4,6 @@
   import { PUBLIC_API_URL } from '$env/static/public'
   import MdArrowDownward from 'svelte-icons/md/MdArrowDownward.svelte'
   import MdArrowUpward from 'svelte-icons/md/MdArrowUpward.svelte'
-  // import FaArrowDown from 'svelte-icons/fa/FaArrowDown.svelte'
-  // import FaArrowUp from 'svelte-icons/fa/FaArrowUp.svelte'
 
   export let pageId
   export let upvotes
