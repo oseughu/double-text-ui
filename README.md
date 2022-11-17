@@ -13,8 +13,12 @@ This project was built to test my skills on linking a fully functional client si
 
 ## Todo
 
-[] Edit comments
-[] Edit posts
-[] Edit replies
-[] Better realtime updates on votes and deletion
-[] Better conditional logic for the navbar
+- [ ] Edit comments
+
+- [ ] Edit posts
+
+- [ ] Edit replies
+
+- [ ] Better realtime updates on votes and deletion
+
+- [ ] Better conditional logic for the navbar
