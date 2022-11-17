@@ -24,7 +24,7 @@
 }
 
 .vote-delete {
-  float: left !important;
+  display: flex;
 }
 
 footer {
