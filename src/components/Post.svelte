@@ -31,7 +31,7 @@
   <div>
     Vote Score: {voteScore}
   </div>
-  <div class="vote-delete">
+  <div>
     <Vote {upvotes} {downvotes} pageId={post._id} />
     <DeletePostButton {post} />
   </div>
