@@ -2,7 +2,6 @@
   import { user } from '$/stores'
   import { goto } from '$app/navigation'
   import { PUBLIC_API_URL } from '$env/static/public'
-  import axios from 'axios'
   import MdDelete from 'svelte-icons/md/MdDelete.svelte'
 
   export let post
@@ -11,8 +10,9 @@
     if ($user.name === undefined) {
       await goto('/login')
     } else {
-      const res = await axios.delete(`${PUBLIC_API_URL}/posts/${post._id}/delete`, {
-        withCredentials: true
+      const res = await fetch(`${PUBLIC_API_URL}/posts/${post._id}/delete`, {
+        method: 'DELETE',
+        credentials: 'include'
       })
 
       console.log(res)
