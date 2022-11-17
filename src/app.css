@@ -23,6 +23,19 @@
   border-radius: 8px;
 }
 
+.flex-container {
+  display: flex;
+}
+
+.flex-child {
+  flex: 1;
+  border: 2px solid yellow;
+}
+
+.flex-child:first-child {
+  margin-right: 20px;
+}
+
 footer {
   text-align: center;
   padding: 30px;
