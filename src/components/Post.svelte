@@ -1,4 +1,5 @@
 <script>
+  import { user } from '$/stores'
   import DeletePostButton from '$components/DeletePostButton.svelte'
   import Vote from '$components/Vote.svelte'
 
@@ -17,7 +18,7 @@
   </div>
   <div>
     <small>
-      <strong>{post.author.name}</strong>
+      <strong>{post.author.name === $user.name ? 'You' : post.author.name}</strong>
     </small>
   </div>
   <div>
