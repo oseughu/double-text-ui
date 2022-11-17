@@ -49,10 +49,8 @@
                 href={$user.name === undefined
                   ? '/login'
                   : `/posts/${post._id}/comments/${comment._id}/replies/new`}>Reply</a>
-
-              <DeleteCommentButton {post} {comment} />
             </div>
-
+            <DeleteCommentButton {post} {comment} />
             <hr />
             {#if comment.replies.length > 0}
               <Replies {post} {comment} />

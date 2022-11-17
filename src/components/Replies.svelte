@@ -20,9 +20,8 @@
           : `/posts/${post._id}/comments/${reply._id}/replies/new`}
         ><button class="btn btn-secondary">Reply</button>
       </a>
-
-      <DeleteCommentButton {post} comment={reply} />
     </div>
+    <DeleteCommentButton {post} comment={reply} />
     <hr />
   </div>
 {/each}
