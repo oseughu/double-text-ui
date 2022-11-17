@@ -24,7 +24,8 @@
 }
 
 .vote-delete {
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr;
 }
 
 footer {
