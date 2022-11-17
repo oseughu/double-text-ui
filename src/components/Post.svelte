@@ -31,7 +31,7 @@
   <div>
     Vote Score: {voteScore}
   </div>
-  <div class="d-flex justify-content-lg-start">
+  <div>
     <Vote {upvotes} {downvotes} pageId={post._id} />
     <DeletePostButton {post} />
   </div>
