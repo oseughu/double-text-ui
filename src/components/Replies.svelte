@@ -1,5 +1,6 @@
 <script>
   import { user } from '$/stores'
+  import DeleteCommentButton from '$components/DeleteCommentButton.svelte'
   export let comment
   export let post
 </script>
@@ -12,12 +13,16 @@
     <p class="text-right">
       <strong>{reply.author.name}</strong>
     </p>
-    <a
-      href={$user.name === undefined
-        ? '/login'
-        : `/posts/${post._id}/comments/${reply._id}/replies/new`}
-      ><button class="btn btn-secondary">Reply</button>
-    </a>
+    <div>
+      <a
+        href={$user.name === undefined
+          ? '/login'
+          : `/posts/${post._id}/comments/${reply._id}/replies/new`}
+        ><button class="btn btn-secondary">Reply</button>
+      </a>
+
+      <DeleteCommentButton {post} comment={reply} />
+    </div>
     <hr />
   </div>
 {/each}

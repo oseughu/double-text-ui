@@ -1,5 +1,6 @@
 <script>
   import { user } from '$/stores'
+  import DeleteCommentButton from '$components/DeleteCommentButton.svelte'
   import Header from '$components/Header.svelte'
   import NewCommentForm from '$components/NewCommentForm.svelte'
   import Replies from '$components/Replies.svelte'
@@ -38,10 +39,15 @@
             <p class="text-right">
               <strong>{comment.author.name}</strong>
             </p>
-            <a
-              href={$user.name === undefined
-                ? '/login'
-                : `/posts/${post._id}/comments/${comment._id}/replies/new`}>Reply</a>
+            <div>
+              <a
+                href={$user.name === undefined
+                  ? '/login'
+                  : `/posts/${post._id}/comments/${comment._id}/replies/new`}>Reply</a>
+
+              <DeleteCommentButton {post} {comment} />
+            </div>
+
             <hr />
             {#if comment.replies.length > 0}
               <Replies {post} {comment} />

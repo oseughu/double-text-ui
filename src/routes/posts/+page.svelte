@@ -1,6 +1,6 @@
 <script>
   import Header from '$components/Header.svelte'
-  import Post from './[id]/Post.svelte'
+  import Post from '$components/Post.svelte'
 
   export let data
 </script>
