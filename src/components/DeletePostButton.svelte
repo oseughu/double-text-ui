@@ -1,7 +1,7 @@
 <script>
   import { user } from '$/stores'
   import { PUBLIC_API_URL } from '$env/static/public'
-  import FaTrashAlt from 'svelte-icons/fa/FaTrashAlt.svelte'
+  import MdDelete from 'svelte-icons/md/MdDelete.svelte'
 
   export let post
 
@@ -24,6 +24,6 @@
 
 {#if $user._id === post.author._id}
   <form on:submit|preventDefault={deletePost}>
-    <button class="btn btn-danger del" type="submit"><FaTrashAlt /></button>
+    <button class="btn btn-danger del" type="submit"><MdDelete /></button>
   </form>
 {/if}

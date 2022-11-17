@@ -2,8 +2,10 @@
   import { user } from '$/stores'
   import { goto } from '$app/navigation'
   import { PUBLIC_API_URL } from '$env/static/public'
-  import FaArrowDown from 'svelte-icons/fa/FaArrowDown.svelte'
-  import FaArrowUp from 'svelte-icons/fa/FaArrowUp.svelte'
+  import MdArrowDownward from 'svelte-icons/md/MdArrowDownward.svelte'
+  import MdArrowUpward from 'svelte-icons/md/MdArrowUpward.svelte'
+  // import FaArrowDown from 'svelte-icons/fa/FaArrowDown.svelte'
+  // import FaArrowUp from 'svelte-icons/fa/FaArrowUp.svelte'
 
   export let pageId
   export let upvotes
@@ -45,11 +47,11 @@
 <div class="m-auto btn-group" role="group">
   <form on:submit|preventDefault={upVote}>
     <button type="submit" class="d-flex justify-content-center btn btn-primary vote-up"
-      ><FaArrowUp /> {upvotes}</button>
+      ><MdArrowUpward /> {upvotes}</button>
   </form>
 
   <form on:submit|preventDefault={downVote}>
     <button type="submit" class="d-flex justify-content-center btn btn-danger vote-down"
-      ><FaArrowDown /> {downvotes}</button>
+      ><MdArrowDownward /> {downvotes}</button>
   </form>
 </div>
