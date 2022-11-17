@@ -17,8 +17,6 @@
         },
         credentials: 'include'
       })
-
-      location.reload()
     }
   }
 </script>
