@@ -10,7 +10,7 @@
     if ($user.name === undefined) {
       await goto('/login')
     } else {
-      await fetch(`${PUBLIC_API_URL}/posts/${post._id}/delete`, {
+      const res = await fetch(`${PUBLIC_API_URL}/posts/${post._id}/delete`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
@@ -18,7 +18,9 @@
         credentials: 'include'
       })
 
-      location.reload()
+      console.log(res)
+
+      // location.reload()
     }
   }
 </script>
