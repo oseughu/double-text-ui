@@ -44,8 +44,8 @@
   }
 </script>
 
-<div class="m-auto btn-group grid-child" role="group">
-  <form on:submit|preventDefault={upVote}>
+<div class="m-auto btn-group row" role="group">
+  <form class="col" on:submit|preventDefault={upVote}>
     <button type="submit" class="d-flex justify-content-center btn btn-primary vote-up"
       ><MdArrowUpward /> {upvotes}</button>
   </form>
