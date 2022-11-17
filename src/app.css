@@ -3,24 +3,24 @@
 }
 
 .vote-up {
-  height: 40px;
-  width: 60px;
+  height: 30px;
+  width: 50px;
   border-top-right-radius: 0%;
   border-bottom-right-radius: 0%;
 }
 .vote-down {
-  height: 40px;
-  width: 60px;
+  height: 30px;
+  width: 50px;
   border-top-left-radius: 0%;
   border-bottom-left-radius: 0%;
 }
 
 .del {
-  height: 40px;
-  width: 60px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
+  height: 30px;
+  width: 50px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
 footer {
