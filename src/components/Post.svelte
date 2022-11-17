@@ -32,8 +32,10 @@
     Vote Score: {voteScore}
   </div>
   <div class="container">
-    <Vote {upvotes} {downvotes} pageId={post._id} />
-    <DeletePostButton {post} />
+    <div class="row">
+      <Vote {upvotes} {downvotes} pageId={post._id} />
+      <DeletePostButton {post} />
+    </div>
   </div>
   <hr />
 </li>
