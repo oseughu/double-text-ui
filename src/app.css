@@ -23,6 +23,10 @@
   border-radius: 8px;
 }
 
+.vote-delete {
+  display: inline-block;
+}
+
 footer {
   text-align: center;
   padding: 30px;
