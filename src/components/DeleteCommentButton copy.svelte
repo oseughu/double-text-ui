@@ -23,7 +23,7 @@
   }
 </script>
 
-{#if $user._id === comment.author._id}
+{#if $user._id === post.author._id || $user._id === comment.author._id}
   <form on:submit|preventDefault={deleteComment}>
     <button class="btn btn-danger del" type="submit"><MdDelete /></button>
   </form>
