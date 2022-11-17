@@ -15,7 +15,9 @@
     <a
       href={$user.name === undefined
         ? '/login'
-        : `/posts/${post._id}/comments/${reply._id}/replies/new`}>Reply</a>
+        : `/posts/${post._id}/comments/${reply._id}/replies/new`}
+      ><button class="btn btn-secondary">Reply</button>
+    </a>
     <hr />
   </div>
 {/each}
