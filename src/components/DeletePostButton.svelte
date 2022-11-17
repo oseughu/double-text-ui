@@ -23,7 +23,7 @@
 </script>
 
 {#if $user._id === post.author._id}
-  <form class="row" on:submit|preventDefault={deletePost}>
+  <form class="col" on:submit|preventDefault={deletePost}>
     <button class="btn btn-danger del" type="submit"><MdDelete /></button>
   </form>
 {/if}
