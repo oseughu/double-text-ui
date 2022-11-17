@@ -13,9 +13,6 @@
     } else {
       await fetch(`${PUBLIC_API_URL}/posts/${post._id}/comments/${comment._id}/delete`, {
         method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        },
         credentials: 'include'
       })
 

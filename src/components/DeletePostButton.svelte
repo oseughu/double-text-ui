@@ -12,9 +12,6 @@
     } else {
       const res = await fetch(`${PUBLIC_API_URL}/posts/${post._id}/delete`, {
         method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        },
         credentials: 'include'
       })
 
