@@ -31,7 +31,7 @@
   <div>
     Vote Score: {voteScore}
   </div>
-  <div class="flex-container">
+  <div class="grid-container">
     <Vote {upvotes} {downvotes} pageId={post._id} />
     <DeletePostButton {post} />
   </div>

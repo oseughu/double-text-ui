@@ -23,7 +23,7 @@
 </script>
 
 {#if $user._id === post.author._id}
-  <form class="flex-child" on:submit|preventDefault={deletePost}>
+  <form class="grid-child" on:submit|preventDefault={deletePost}>
     <button class="btn btn-danger del" type="submit"><MdDelete /></button>
   </form>
 {/if}
