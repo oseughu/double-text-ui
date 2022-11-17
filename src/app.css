@@ -24,7 +24,7 @@
 }
 
 .vote-delete {
-  display: inline-block;
+  float: left !important;
 }
 
 footer {
