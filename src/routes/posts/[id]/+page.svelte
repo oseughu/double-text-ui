@@ -1,6 +1,7 @@
 <script>
   import { user } from '$/stores'
   import DeleteCommentButton from '$components/DeleteCommentButton.svelte'
+  import DeletePostButton from '$components/DeletePostButton.svelte'
   import Header from '$components/Header.svelte'
   import NewCommentForm from '$components/NewCommentForm.svelte'
   import Replies from '$components/Replies.svelte'
@@ -28,7 +29,11 @@
       <p>
         <strong>Written By {post.author.name}</strong>
       </p>
-      <Vote {upvotes} {downvotes} pageId={post._id} />
+      <div>
+        <Vote {upvotes} {downvotes} pageId={post._id} />
+        <DeletePostButton {post} />
+      </div>
+
       <NewCommentForm postId={post._id} />
       {#if post.comments.length > 0}
         <div class="col-xs-12 mt-4">
