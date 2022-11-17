@@ -2,15 +2,15 @@
   import { user } from '$/stores'
   import { goto } from '$app/navigation'
   import { page } from '$app/stores'
+  import Spinner from '$components/Spinner.svelte'
   import { PUBLIC_API_URL } from '$env/static/public'
   import { onMount } from 'svelte'
-  import Spinner from './Spinner.svelte'
 
   let message
   let currentPage = $page.url.pathname
 
-  export let navBarText,
-    navBarLink = []
+  export let navBarText = []
+  export let navBarLink = []
 
   onMount(async () => {
     const response = await fetch(`${PUBLIC_API_URL}/user`, {
