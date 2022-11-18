@@ -11,7 +11,7 @@
     if ($user.name === undefined) {
       await goto('/login')
     } else {
-      await fetch(`${PUBLIC_API_URL}/posts/${post._id}/comments/${comment._id}/delete`, {
+      await fetch(`${PUBLIC_API_URL}/posts/${post._id}/comments/${comment._id}`, {
         method: 'DELETE',
         credentials: 'include'
       })

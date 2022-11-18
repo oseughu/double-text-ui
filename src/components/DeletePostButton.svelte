@@ -10,14 +10,12 @@
     if ($user.name === undefined) {
       await goto('/login')
     } else {
-      const res = await fetch(`${PUBLIC_API_URL}/posts/${post._id}/delete`, {
+      await fetch(`${PUBLIC_API_URL}/posts/${post._id}`, {
         method: 'DELETE',
         credentials: 'include'
       })
 
-      console.log(res)
-
-      // location.reload()
+      location.reload()
     }
   }
 </script>
