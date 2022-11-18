@@ -3,8 +3,8 @@
   import Header from '$components/Header.svelte'
   import { PUBLIC_API_URL } from '$env/static/public'
 
-  let name = '',
-    email = '',
+  let name,
+    email,
     password = ''
 
   const submit = async () => {
