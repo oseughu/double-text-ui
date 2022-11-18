@@ -33,7 +33,6 @@
         <Vote {upvotes} {downvotes} pageId={post._id} />
         <DeletePostButton {post} />
       </div>
-
       <NewCommentForm postId={post._id} />
       {#if post.comments.length > 0}
         <div class="col-xs-12 mt-4">

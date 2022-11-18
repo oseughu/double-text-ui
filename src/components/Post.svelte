@@ -18,7 +18,7 @@
   </div>
   <div>
     <small>
-      <strong>{post.author.name === $user.name ? 'You' : post.author.name}</strong>
+      <strong>{post.author.email === $user.email ? 'You' : post.author.name}</strong>
     </small>
   </div>
   <div>
