@@ -15,9 +15,6 @@
     } else {
       await fetch(`${PUBLIC_API_URL}/posts/${pageId}/vote-up`, {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
         credentials: 'include'
       })
 
@@ -31,9 +28,6 @@
     } else {
       await fetch(`${PUBLIC_API_URL}/posts/${pageId}/vote-down`, {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
         credentials: 'include'
       })
 
