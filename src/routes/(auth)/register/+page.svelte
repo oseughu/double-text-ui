@@ -7,7 +7,7 @@
     password,
     confirmPassword = ''
 
-  const validatePassword = (node, val) => {
+  const validity = (node, val) => {
     if (!!val) node.setCustomValidity(val)
     return {
       update(newVal) {
@@ -63,11 +63,10 @@
     <div class="form-outline mb-4">
       <input
         bind:value={confirmPassword}
-        use:validatePassword={confirmPassword !== password ? "Passwords don't match" : ''}
+        use:validity={confirmPassword !== password ? "Passwords don't match" : ''}
         type="password"
         class="form-control"
-        required
-        minlength="8" />
+        required />
       <label class="form-label" for="password">Confirm Password</label>
     </div>
 
