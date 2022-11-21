@@ -38,7 +38,7 @@
   <form class="form-group" on:submit|preventDefault={addReply}>
     <div class="mb-3">
       <label class="form-label" for="content">Reply</label>
-      <textarea class="form-control" name="content" bind:value={content} />
+      <textarea class="form-control" name="content" bind:value={content} required minlength="8" />
     </div>
 
     <button data-bs-dismiss="modal" class="btn btn-secondary" type="submit">Reply</button>

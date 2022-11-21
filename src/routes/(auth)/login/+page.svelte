@@ -32,13 +32,13 @@
   <form class="form-group" on:submit|preventDefault={submit}>
     <!-- Email input -->
     <div class="form-outline mb-4">
-      <input bind:value={email} type="email" class="form-control" />
+      <input bind:value={email} type="email" class="form-control" required />
       <label class="form-label" for="email">Email</label>
     </div>
 
     <!-- Password input -->
     <div class="form-outline mb-4">
-      <input bind:value={password} type="password" class="form-control" />
+      <input bind:value={password} type="password" class="form-control" required minlength="8" />
       <label class="form-label" for="password">Password</label>
     </div>
 

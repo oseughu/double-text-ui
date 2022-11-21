@@ -28,7 +28,7 @@
 <div class="container mt-4">
   <form class="form-group" on:submit|preventDefault={addComment}>
     <div class="mb-3">
-      <textarea class="form-control" name="content" bind:value={content} />
+      <textarea class="form-control" name="content" bind:value={content} required minlength="8" />
     </div>
 
     <button class="btn btn-secondary" type="submit">Reply</button>
