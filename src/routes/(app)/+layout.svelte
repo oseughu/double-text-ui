@@ -3,12 +3,23 @@
   import { goto } from '$app/navigation'
   import Spinner from '$components/Spinner.svelte'
   import { PUBLIC_API_URL } from '$env/static/public'
+  import { onMount } from 'svelte'
 
-  export let data
   let message
 
-  user.set(data.user)
-  message = $user.name === undefined ? 'not logged in' : `Hi, ${$user.name}`
+  onMount(async () => {
+    const response = await fetch(`${PUBLIC_API_URL}/user`, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include'
+    })
+
+    const content = await response.json()
+
+    user.set(content)
+    message = $user.name === undefined ? 'not logged in' : `Hi, ${$user.name}`
+  })
 
   const logout = async () => {
     await fetch(`${PUBLIC_API_URL}/logout`, {
