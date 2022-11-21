@@ -23,4 +23,4 @@ This project was built to test my skills on linking a fully functional client si
 
 - [ ] Better realtime updates on votes and deletion
 
-- [ ] Better conditional logic for the navbar
+- [x] Better conditional logic for the navbar
