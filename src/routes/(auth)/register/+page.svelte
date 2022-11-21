@@ -49,7 +49,12 @@
 
     <!-- Email input -->
     <div class="form-outline mb-4">
-      <input bind:value={email} type="email" class="form-control" required />
+      <input
+        bind:value={email}
+        type="email"
+        class="form-control"
+        pattern="^[^ ]+@[^ ]+\.[a-z]{(2, 63)}$"
+        required />
       <label class="form-label" for="email">Email</label>
     </div>
 
