@@ -1,5 +1,6 @@
 <script>
   import { user } from '$/stores'
+  import { goto } from '$app/navigation'
   import Footer from '$components/Footer.svelte'
   import Spinner from '$components/Spinner.svelte'
   import { PUBLIC_API_URL } from '$env/static/public'
@@ -19,7 +20,7 @@
       credentials: 'include'
     })
 
-    location.reload()
+    await goto('/')
   }
 </script>
 

@@ -8,9 +8,9 @@ export async function load({ fetch }) {
     credentials: 'include'
   })
 
-  const content = await response.json()
+  const user = await response.json()
 
   return {
-    user: content.user
+    user
   }
 }
