@@ -1,6 +1,5 @@
 <script>
   import { goto } from '$app/navigation'
-  import Header from '$components/Header.svelte'
   import { PUBLIC_API_URL } from '$env/static/public'
 
   let email,
@@ -26,8 +25,6 @@
     }
   }
 </script>
-
-<Header navBarText={['Home', 'Sign Up']} navBarLink={['/', '/register']} />
 
 <div class="container mt-4">
   <h1 class="mb-4 mt-4">Login</h1>

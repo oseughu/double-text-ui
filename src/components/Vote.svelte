@@ -47,3 +47,18 @@
       ><MdArrowDownward /> {downvotes}</button>
   </form>
 </div>
+
+<style>
+  .vote-up {
+    height: 40px;
+    width: 60px;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+  .vote-down {
+    height: 40px;
+    width: 60px;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+  }
+</style>

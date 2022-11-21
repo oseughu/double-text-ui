@@ -2,7 +2,6 @@
   import { user } from '$/stores'
   import DeleteCommentButton from '$components/DeleteCommentButton.svelte'
   import DeletePostButton from '$components/DeletePostButton.svelte'
-  import Header from '$components/Header.svelte'
   import NewCommentForm from '$components/NewCommentForm.svelte'
   import Replies from '$components/Replies.svelte'
   import Vote from '$components/Vote.svelte'
@@ -14,8 +13,6 @@
   $: upvotes = post.upVotes.length
   $: downvotes = post.downVotes.length
 </script>
-
-<Header />
 
 <div class="container mt-4">
   <h1 class="mb-4 mt-4">

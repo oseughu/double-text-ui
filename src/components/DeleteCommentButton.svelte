@@ -26,3 +26,13 @@
     <button class="btn btn-danger del" type="submit"><MdDelete /></button>
   </form>
 {/if}
+
+<style>
+  .del {
+    height: 40px;
+    width: 60px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+  }
+</style>

@@ -1,6 +1,5 @@
 <script>
   import { goto } from '$app/navigation'
-  import Header from '$components/Header.svelte'
   import { PUBLIC_API_URL } from '$env/static/public'
 
   let name,
@@ -20,15 +19,13 @@
       })
     })
 
-    if (res.status === 200) {
+    if (res.status === 201) {
       await goto('/login')
     } else {
       alert('error registering user. please check all fields and try again.')
     }
   }
 </script>
-
-<Header navBarText={['Home', 'Login']} navBarLink={['/', '/login']} />
 
 <div class="container mt-4">
   <h1 class="mb-4 mt-4">Sign Up</h1>

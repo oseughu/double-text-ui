@@ -25,3 +25,9 @@
     <hr />
   </div>
 {/each}
+
+<style>
+  .comment-indent {
+    margin-left: 40px;
+  }
+</style>

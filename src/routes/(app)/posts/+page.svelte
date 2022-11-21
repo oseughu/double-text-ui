@@ -1,11 +1,8 @@
 <script>
-  import Header from '$components/Header.svelte'
   import Post from '$components/Post.svelte'
 
   export let data
 </script>
-
-<Header />
 
 <div class="container mt-4">
   <h1 class="mb-4 mt-4">Posts</h1>

@@ -1,6 +1,5 @@
 <script>
   import { goto } from '$app/navigation'
-  import Header from '$components/Header.svelte'
   import { PUBLIC_API_URL } from '$env/static/public'
 
   let title,
@@ -22,8 +21,6 @@
     await goto('/posts')
   }
 </script>
-
-<Header />
 
 <div class="container mt-4">
   <h1 class="mt-4 mb-4">New Post</h1>

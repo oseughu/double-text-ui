@@ -1,7 +1,6 @@
 <script>
   import { goto } from '$app/navigation'
   import { page } from '$app/stores'
-  import Header from '$components/Header.svelte'
   import { PUBLIC_API_URL } from '$env/static/public'
 
   export let data
@@ -31,8 +30,6 @@
     await goto(`/posts/${$page.params.id}`)
   }
 </script>
-
-<Header />
 
 <div class="container mt-4">
   <h3 class="mt-4 mb-4"
