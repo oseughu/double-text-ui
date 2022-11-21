@@ -4,7 +4,17 @@
 
   let name,
     email,
-    password = ''
+    password,
+    confirmPassword = ''
+
+  const validatePassword = (node, val) => {
+    if (!!val) node.setCustomValidity(val)
+    return {
+      update(newVal) {
+        node.setCustomValidity(newVal ? newVal : '')
+      }
+    }
+  }
 
   const submit = async () => {
     const res = await fetch(`${PUBLIC_API_URL}/register`, {
@@ -47,6 +57,18 @@
     <div class="form-outline mb-4">
       <input bind:value={password} type="password" class="form-control" required minlength="8" />
       <label class="form-label" for="password">Password</label>
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="form-outline mb-4">
+      <input
+        bind:value={confirmPassword}
+        use:validatePassword={confirmPassword !== password ? "Passwords don't match" : ''}
+        type="password"
+        class="form-control"
+        required
+        minlength="8" />
+      <label class="form-label" for="password">Confirm Password</label>
     </div>
 
     <!-- Submit button -->
