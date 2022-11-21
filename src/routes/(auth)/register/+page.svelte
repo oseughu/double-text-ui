@@ -49,7 +49,12 @@
 
     <!-- Email input -->
     <div class="form-outline mb-4">
-      <input bind:value={email} type="email" class="form-control" required />
+      <input
+        bind:value={email}
+        type="text"
+        pattern="[^@\s]+@[^@\s]+"
+        title="Invalid email address"
+        required />
       <label class="form-label" for="email">Email</label>
     </div>
 
