@@ -27,7 +27,6 @@
             <a href="/login" class="nav-link active">Login</a>
           {/if}
         </li>
-
         <li class="nav-item">
           <a class="nav-link active" href="/posts">Posts</a>
         </li>
