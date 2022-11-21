@@ -53,7 +53,6 @@
         bind:value={email}
         type="email"
         class="form-control"
-        pattern="^[^ ]+@[^ ]+\.[a-z]{(2, 6)}$"
         required />
       <label class="form-label" for="email">Email</label>
     </div>
